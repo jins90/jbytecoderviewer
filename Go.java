@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Go
+public class Go implements JK
 {
     public int x = 10;
     private int j = 5;
@@ -10,6 +10,10 @@ public class Go
     public Go()
     {
         x = 50;
+    }
+
+    public void yo() {
+        System.out.println("YUP");
     }
 
     public void hello(int j, int k) {

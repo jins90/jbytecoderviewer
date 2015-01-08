@@ -61,7 +61,7 @@ void setIntInfo(Integer_Info *i_info, int fd)
 void setFloatInfo(Float_Info *f_info, int fd)
 {
    u1 buff[4];
-   jread(fd, buff, 4, "Unable to read Integer");
+   jread(fd, buff, 4, "Unable to read float");
    f_info->bytes = convertInt(buff);
 }
 
@@ -101,6 +101,7 @@ void setCPoolDetail(CP_Info *cp, int fd, int cindex)
         break;
       case FLOAT:
         setFloatInfo(&cp->c_detail.f_info, fd);   
+        break;
       case CLASS:
         setClassInfo(&cp->c_detail.c_info, fd); 
         break; 
@@ -117,7 +118,7 @@ void setCPoolDetail(CP_Info *cp, int fd, int cindex)
         setNameTypeInfo(&cp->c_detail.nt_info, fd); 
         break;
       default:
-         printf("Unable to handle %d\n", cp->tag);
+         printf("Unable to handle tag %d\n", cp->tag);
          exit(1);
    }
 }

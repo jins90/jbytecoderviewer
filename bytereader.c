@@ -77,6 +77,9 @@ void printCPoolDetail(ClassFile *cf, int index)
       case INT:
         printf("[%3d] INT = %d\n", index, cp->c_detail.i_info.bytes);
         break;
+      case FLOAT:
+        printf("[%3d] FLOAT = %f\n", index, (float)cp->c_detail.f_info.bytes);
+        break;
       case CLASS:
         cindex = cp->c_detail.c_info.index;
         printf("[%3d] CLASS = (index = %d, value = %s)\n", index, cindex, cf->c_pool[cindex].c_detail.u8_info.bytes);
